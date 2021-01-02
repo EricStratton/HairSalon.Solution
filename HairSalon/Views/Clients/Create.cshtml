@@ -11,7 +11,8 @@
     @Html.LabelFor(model => model.Name)
     @Html.TextBoxFor(model => model.Name)
 
-    // Add Stylist list drop down for creating a new client profile
+    @Html.LabelFor(model => model.Stylist)
+    @Html.DropDownList("StylistId")
 
     <input type="submit" value="Add new client" class="btn btn-default"/>
 }
