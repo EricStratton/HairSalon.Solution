@@ -4,3 +4,21 @@
 
 @using HairSalon.Models;
 @model HairSalon.Models.Stylist;
+
+<h2>Stylist Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+<ul>
+@if (@Model.Clients.Count == 0)
+{
+  <p>Stylist does not have any clients</p>
+}
+
+@foreach (Client client in @Model.Clients)
+{
+  <li>Client: @client.Name</li>
+}
+</ul>
+
+<p>@Html.ActionLink("Back to stylists", "Index")</p>
